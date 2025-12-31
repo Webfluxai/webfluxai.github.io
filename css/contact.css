@@ -1,0 +1,282 @@
+/* Contact Page Specific Styles */
+
+/* Contact Page Specific Styles */
+.contact-hero {
+    padding: var(--space-12) 0 var(--space-8);
+    text-align: center;
+    background: linear-gradient(135deg, #f3f4f6 0%, #ffffff 100%);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.contact-hero-content {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.contact-container {
+    display: grid;
+    gap: var(--space-8);
+    padding: var(--space-8) 0;
+}
+
+@media (min-width: 1024px) {
+    .contact-container {
+        grid-template-columns: 1fr 1.5fr;
+    }
+}
+
+/* Contact Info */
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+}
+
+.contact-info-card {
+    padding: var(--space-6);
+    background: rgba(255, 255, 255, 0.8);
+    /* Slightly transparent */
+    backdrop-filter: blur(12px);
+    /* Glassmorphism */
+    border: 1px solid rgba(124, 58, 237, 0.1);
+    border-left: 4px solid var(--primary-color);
+    /* Accent highlight */
+    border-radius: var(--radius-xl);
+    transition: all var(--duration-base) var(--ease-out);
+    box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.08);
+    /* Soft floating shadow */
+    position: relative;
+    overflow: hidden;
+}
+
+.contact-info-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px -12px rgba(124, 58, 237, 0.2);
+    /* Colored glow on hover */
+    border-color: rgba(124, 58, 237, 0.3);
+}
+
+.contact-info-title {
+    font-size: var(--text-2xl);
+    font-weight: var(--weight-bold);
+    margin-bottom: var(--space-4);
+    color: var(--text-primary);
+}
+
+.contact-detail {
+    display: flex;
+    align-items: center;
+    /* Center align vertically */
+    gap: var(--space-4);
+    /* Increased gap */
+    margin-bottom: var(--space-6);
+}
+
+.contact-detail-icon {
+    width: 64px;
+    /* Increased size */
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-lg);
+    flex-shrink: 0;
+    overflow: hidden;
+    /* Ensure image stays inside */
+}
+
+.contact-detail-icon img,
+.contact-detail-icon svg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Cover to fill the square */
+}
+
+.contact-detail-content {
+    flex: 1;
+    padding-top: var(--space-1);
+}
+
+.contact-detail-label {
+    font-size: var(--text-sm);
+    color: var(--text-muted);
+    margin-bottom: var(--space-1);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.contact-detail-value {
+    font-size: var(--text-lg);
+    font-weight: var(--weight-medium);
+    color: var(--text-primary);
+}
+
+.contact-detail-value a {
+    transition: color var(--duration-base) var(--ease-out);
+}
+
+.contact-detail-value a:hover {
+    color: var(--primary-color);
+}
+
+/* Contact Form */
+.contact-form-container {
+    padding: var(--space-8);
+    background: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    border-radius: var(--radius-2xl);
+    box-shadow: var(--shadow-md);
+}
+
+.contact-form-title {
+    font-size: var(--text-2xl);
+    font-weight: var(--weight-bold);
+    margin-bottom: var(--space-2);
+    color: var(--text-primary);
+}
+
+.contact-form-description {
+    font-size: var(--text-base);
+    color: var(--text-secondary);
+    margin-bottom: var(--space-6);
+}
+
+.form-group {
+    margin-bottom: var(--space-5);
+}
+
+.form-label {
+    display: block;
+    font-size: var(--text-base);
+    font-weight: var(--weight-medium);
+    color: var(--text-primary);
+    margin-bottom: var(--space-2);
+}
+
+.form-label.required::after {
+    content: '*';
+    color: var(--error);
+    margin-left: var(--space-1);
+}
+
+.form-input,
+.form-textarea {
+    width: 100%;
+    padding: var(--space-3) var(--space-4);
+    font-family: var(--font-body);
+    font-size: var(--text-base);
+    color: var(--text-primary);
+    background: #f9fafb;
+    /* Light bg */
+    border: 2px solid rgba(0, 0, 0, 0.05);
+    border-radius: var(--radius-lg);
+    transition: all var(--duration-base) var(--ease-out);
+}
+
+.form-input:focus,
+.form-textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.1);
+    background: #ffffff;
+}
+
+.form-input::placeholder,
+.form-textarea::placeholder {
+    color: var(--text-muted);
+}
+
+.form-textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+.form-error {
+    display: none;
+    font-size: var(--text-sm);
+    color: var(--error);
+    margin-top: var(--space-2);
+}
+
+.form-group.error .form-input,
+.form-group.error .form-textarea {
+    border-color: var(--error);
+}
+
+.form-group.error .form-error {
+    display: block;
+}
+
+.form-submit {
+    width: 100%;
+    padding: var(--space-4);
+    font-size: var(--text-lg);
+}
+
+/* Form Messages */
+.form-message {
+    padding: var(--space-4);
+    border-radius: var(--radius-lg);
+    margin-bottom: var(--space-4);
+    display: none;
+    animation: slideUp 0.3s var(--ease-out);
+}
+
+.form-message.show {
+    display: block;
+}
+
+.form-message.success {
+    background: rgba(16, 185, 129, 0.1);
+    border: 1px solid var(--success);
+    color: var(--success);
+}
+
+.form-message.error {
+    background: rgba(239, 68, 68, 0.1);
+    border: 1px solid var(--error);
+    color: var(--error);
+}
+
+/* Schedule Section */
+.schedule-section {
+    background: var(--primary-gradient);
+    border-radius: var(--radius-2xl);
+    padding: var(--space-8);
+    text-align: center;
+    margin-top: var(--space-8);
+}
+
+.schedule-section h3 {
+    font-size: var(--text-3xl);
+    margin-bottom: var(--space-3);
+    color: white;
+    /* White text on purple background */
+}
+
+.schedule-section p {
+    font-size: var(--text-lg);
+    margin-bottom: var(--space-6);
+    opacity: 0.95;
+    color: rgba(255, 255, 255, 0.9);
+    /* White text */
+}
+
+.contact-info-card:hover {
+    border-color: rgba(124, 58, 237, 0.4);
+    transform: translateY(-4px);
+    box-shadow: 0 10px 15px -3px rgba(124, 58, 237, 0.15), 0 4px 6px -2px rgba(124, 58, 237, 0.1);
+}
+
+.schedule-section .btn {
+    background: white;
+    color: var(--primary-color);
+    font-size: var(--text-lg);
+    padding: var(--space-4) var(--space-8);
+}
+
+.schedule-section .btn:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}

@@ -1,0 +1,207 @@
+/* Navigation Styles */
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: var(--z-sticky);
+    padding: var(--space-4) 0;
+    transition: all var(--duration-base) var(--ease-out);
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.navbar.scrolled {
+    padding: var(--space-2) 0;
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: var(--shadow-sm);
+    border-bottom-color: rgba(124, 58, 237, 0.2);
+}
+
+.navbar .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Logo */
+.navbar-logo {
+    font-family: var(--font-heading);
+    font-size: var(--text-2xl);
+    font-weight: var(--weight-extrabold);
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    transition: transform var(--duration-base) var(--ease-out);
+}
+
+.navbar-logo:hover {
+    transform: scale(1.05);
+}
+
+/* Desktop Navigation */
+.navbar-menu {
+    display: none;
+    align-items: center;
+    gap: var(--space-6);
+}
+
+.navbar-link {
+    font-family: var(--font-heading);
+    font-size: var(--text-base);
+    font-weight: var(--weight-medium);
+    color: var(--text-secondary);
+    padding: var(--space-2) var(--space-3);
+    border-radius: var(--radius-md);
+    transition: all var(--duration-base) var(--ease-out);
+    position: relative;
+}
+
+.navbar-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%) scaleX(0);
+    width: 80%;
+    height: 2px;
+    background: var(--primary-gradient);
+    transition: transform var(--duration-base) var(--ease-out);
+}
+
+.navbar-link:hover {
+    color: var(--text-primary);
+}
+
+.navbar-link:hover::after {
+    transform: translateX(-50%) scaleX(1);
+}
+
+.navbar-link.active {
+    color: var(--primary-color);
+    background: rgba(124, 58, 237, 0.05);
+}
+
+.navbar-cta {
+    margin-left: var(--space-3);
+}
+
+/* Mobile Menu Toggle */
+.navbar-toggle {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: 28px;
+    height: 24px;
+    cursor: pointer;
+    z-index: var(--z-fixed);
+    background: transparent;
+    border: none;
+}
+
+.navbar-toggle span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background: var(--text-primary);
+    border-radius: var(--radius-full);
+    transition: all var(--duration-base) var(--ease-out);
+}
+
+.navbar-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translateY(10px);
+}
+
+.navbar-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.navbar-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translateY(-10px);
+}
+
+/* Mobile Menu */
+.navbar-mobile {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 280px;
+    background: #ffffff;
+    padding: var(--space-16) var(--space-6) var(--space-6);
+    transform: translateX(100%);
+    transition: transform var(--duration-base) var(--ease-out);
+    z-index: var(--z-modal);
+    border-left: 1px solid rgba(0, 0, 0, 0.05);
+    box-shadow: var(--shadow-xl);
+}
+
+.navbar-mobile.active {
+    transform: translateX(0);
+}
+
+.navbar-mobile-links {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+}
+
+.navbar-mobile-link {
+    font-family: var(--font-heading);
+    font-size: var(--text-lg);
+    font-weight: var(--weight-medium);
+    color: var(--text-secondary);
+    padding: var(--space-3);
+    border-radius: var(--radius-md);
+    transition: all var(--duration-base) var(--ease-out);
+}
+
+.navbar-mobile-link:hover,
+.navbar-mobile-link.active {
+    color: var(--text-primary);
+    background: rgba(124, 58, 237, 0.2);
+    transform: translateX(8px);
+}
+
+.navbar-mobile-cta {
+    margin-top: var(--space-6);
+    width: 100%;
+}
+
+/* Mobile Menu Overlay */
+.navbar-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(10, 14, 39, 0.8);
+    opacity: 0;
+    visibility: hidden;
+    transition: all var(--duration-base) var(--ease-out);
+    z-index: calc(var(--z-modal) - 1);
+}
+
+.navbar-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Tablet and Desktop */
+@media (min-width: 768px) {
+    .navbar-menu {
+        display: flex;
+    }
+
+    .navbar-toggle {
+        display: none;
+    }
+}
+
+/* Page Spacing for Fixed Navbar */
+body {
+    padding-top: 80px;
+}

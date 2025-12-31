@@ -1,0 +1,184 @@
+/* Footer Styles */
+
+.footer {
+    background-color: #0B0B14;
+    color: #E7E7F0;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding: var(--space-12) 0 var(--space-6);
+    margin-top: var(--space-16);
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-8);
+    margin-bottom: var(--space-8);
+}
+
+@media (min-width: 768px) {
+    .footer-content {
+        grid-template-columns: 2fr 1fr 1fr;
+        gap: var(--space-12);
+    }
+}
+
+/* Footer Brand Section */
+.footer-brand {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+}
+
+.footer-logo {
+    font-family: var(--font-heading);
+    font-size: var(--text-3xl);
+    font-weight: var(--weight-extrabold);
+    color: #E7E7F0;
+    background: none;
+    -webkit-text-fill-color: initial;
+    background-clip: border-box;
+    text-decoration: none;
+}
+
+.footer-tagline {
+    color: #A1A1B3;
+    font-size: var(--text-base);
+    max-width: 400px;
+    line-height: 1.7;
+}
+
+.footer-contact {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+    margin-top: var(--space-2);
+}
+
+.footer-contact-item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    color: #A1A1B3;
+    /* Treated as span/p */
+    font-size: var(--text-sm);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+/* It is an anchor, so it needs the hover color */
+.footer-contact-item:hover {
+    color: rgba(124, 58, 237, 1);
+}
+
+.footer-contact-icon {
+    font-size: var(--text-lg);
+    color: rgba(124, 58, 237, 0.8);
+    /* Accent */
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-contact-icon svg {
+    width: 100%;
+    height: 100%;
+    fill: none;
+    /* User specified stroke, so likely fill none is better */
+    stroke: rgba(124, 58, 237, 0.8);
+}
+
+/* Footer Links Section */
+.footer-section {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+}
+
+.footer-title {
+    font-family: var(--font-heading);
+    font-size: var(--text-lg);
+    font-weight: var(--weight-semibold);
+    color: #E7E7F0;
+    margin-bottom: var(--space-2);
+}
+
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+}
+
+.footer-link {
+    color: #E7E7F0;
+    font-size: var(--text-base);
+    text-decoration: none;
+    transition: color 0.2s ease;
+    display: inline-block;
+}
+
+.footer-link:hover {
+    color: rgba(124, 58, 237, 1);
+    transform: translateX(4px);
+}
+
+/* Footer Bottom */
+.footer-bottom {
+    padding-top: var(--space-6);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-3);
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    .footer-bottom {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+.footer-copyright {
+    color: #A1A1B3;
+    font-size: var(--text-sm);
+}
+
+.footer-social {
+    display: flex;
+    gap: var(--space-4);
+    align-items: center;
+}
+
+.footer-social-link {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-full);
+    background: rgba(255, 255, 255, 0.05);
+    /* kept purely for layout structure, though user didn't specify social link bg... will use generic background from previous step but update text/border */
+    color: #E7E7F0;
+    font-size: var(--text-lg);
+    transition: all 0.2s ease;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    text-decoration: none;
+}
+
+.footer-social-link:hover {
+    background: rgba(124, 58, 237, 0.1);
+    color: rgba(124, 58, 237, 1);
+    border-color: rgba(124, 58, 237, 0.8);
+    transform: translateY(-4px);
+}
+
+.footer-social-link svg {
+    width: 20px;
+    height: 20px;
+    fill: none;
+    stroke: rgba(124, 58, 237, 0.8);
+    /* matching general svg rule */
+}
