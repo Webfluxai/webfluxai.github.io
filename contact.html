@@ -191,7 +191,15 @@
 
                     <div id="formMessage" class="form-message"></div>
 
-                    <form id="contactForm" class="contact-form">
+                    <form id="contactForm" class="contact-form" action="https://api.web3forms.com/submit" method="POST">
+                        <!-- Web3Forms Access Key - GET YOUR KEY AT: https://web3forms.com/ -->
+                        <input type="hidden" name="access_key" value="d9f6ffa4-58d1-449a-9fbd-0718e60eb2dc">
+
+                        <!-- Optional: Web3Forms Configuration -->
+                        <input type="hidden" name="subject" value="New Submission from Webflux Contact Form">
+                        <input type="hidden" name="from_name" value="Webflux Website">
+                        <!-- <input type="hidden" name="redirect" value="https://web3forms.com/success"> -->
+
                         <div class="form-group">
                             <label for="name" class="form-label required">Name</label>
                             <input type="text" id="name" name="name" class="form-input" placeholder="Your full name"
@@ -225,6 +233,9 @@
                                 placeholder="Tell us about your project and goals..." required></textarea>
                             <span class="form-error">Please enter your message</span>
                         </div>
+
+                        <!-- Honeypot (Anti-Spam) -->
+                        <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
 
                         <button type="submit" class="btn btn-primary form-submit">
                             Send Message
