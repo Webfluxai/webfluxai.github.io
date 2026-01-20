@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://webfluxai.github.io/sitemap.xml
